@@ -59,7 +59,7 @@ namespace OrderBuddy.Tests
       int count = 2;
 
       //Assert
-      Assert.AreEqual(count, GetInstancesList().Count);
+      Assert.AreEqual(count, Vendor.GetInstancesList().Count);
     }
 
   }

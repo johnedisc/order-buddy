@@ -14,6 +14,7 @@ namespace OrderBuddy.Models
     {
       Name = nameParameter;
       Description = desciptionParameter;
+      _instances.Add(this);
       Id = ++_totalCount;
     }
 
