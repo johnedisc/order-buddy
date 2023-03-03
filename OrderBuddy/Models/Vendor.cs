@@ -10,9 +10,10 @@ namespace OrderBuddy.Models
     private static List<Vendor> _instances = new List<Vendor> { };
     private static int _totalCount = 0;
 
-    public Vendor(string name)
+    public Vendor(string nameParameter, string desciptionParameter)
     {
-      Name = name;
+      Name = nameParameter;
+      Description = desciptionParameter;
     }
 
   }

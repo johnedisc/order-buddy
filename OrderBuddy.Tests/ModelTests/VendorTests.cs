@@ -12,26 +12,38 @@ namespace OrderBuddy.Tests
     [TestMethod]
     public void VendorConstructor_CreatesInstanceOfVendor_Vendor()
     {
-      Vendor testVendor = new Vendor("test");
+      Vendor testVendor = new Vendor("test","test");
       Assert.AreEqual(typeof(Vendor), testVendor.GetType());
     }
 
     [TestMethod]
     public void VendorConstructor_ContainsInputedName_Vendor()
     {
+      //Arrange
       string test = "sysco";
-      Vendor testVendor = new Vendor(test);
+
+      //Act
+      Vendor testVendor = new Vendor(test,"more test");
+
+      //Assert
       Assert.AreEqual(test, testVendor.Name);
     }
 
     [TestMethod]
     public void VendorConstructor_ReturnsDescriptionProperty_Vendor()
     {
+      //Arrange
       string test = "sysco";
       string sampleDescription = "very big company that brings our peeled garlic";
+
+      //Act
       Vendor testVendor = new Vendor(test, sampleDescription);
+
+      //Assert
       Assert.AreEqual(sampleDescription, testVendor.Description);
     }
+
+
 
   }
 }
