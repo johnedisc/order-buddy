@@ -24,5 +24,14 @@ namespace OrderBuddy.Tests
       Assert.AreEqual(test, testVendor.Name);
     }
 
+    [TestMethod]
+    public void VendorConstructor_ReturnsDescriptionProperty_Vendor()
+    {
+      string test = "sysco";
+      string sampleDescription = "very big company that brings our peeled garlic";
+      Vendor testVendor = new Vendor(test, sampleDescription);
+      Assert.AreEqual(sampleDescription, testVendor.Description);
+    }
+
   }
 }
