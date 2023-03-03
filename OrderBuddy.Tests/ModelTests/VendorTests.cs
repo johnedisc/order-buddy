@@ -72,11 +72,11 @@ namespace OrderBuddy.Tests
       Order testOrder1 = new Order();
       Order testOrder2 = new Order();
       testVendor1.Orders.Add(testOrder1);
-      testVendor2.Orders.Add(testOrder2);
-      int count = 2;
+      testVendor1.Orders.Add(testOrder2);
+      List<Order> testList = new List<Order> { testOrder1, testOrder2 };
 
       //Assert
-      Assert.AreEqual(count, testVendor1.Orders.Count);
+      Assert.AreEqual(testList, testVendor1.Orders);
     }
   }
 }
