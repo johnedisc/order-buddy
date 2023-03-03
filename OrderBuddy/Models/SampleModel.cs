@@ -2,17 +2,19 @@ using System.Collections.Generic;
 
 namespace OrderBuddy.Models
 {
-  public class Item
+  public class Vendor
   {
     public string Description { get; set; }
+    public string Name { get; set; }
     public int Id { get; }
     private static List<Item> _instances = new List<Item> { };
+    private static int TotalCount = 0;
 
     public Item(string description)
     {
       Description = description;
       _instances.Add(this);
-      Id = _instances.Count;
+      Id = ++TotalCount;
     }
 
     public static List<Item> GetAll()
