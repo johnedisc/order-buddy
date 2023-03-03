@@ -62,5 +62,19 @@ namespace OrderBuddy.Tests
       Assert.AreEqual(count, Vendor.GetInstancesList().Count);
     }
 
+    [TestMethod]
+    //Arrange
+    [DataRow("sysco","very big company that brings our peeled garlic","70 lbs garlic","140 lbs butter")]
+    public void VendorConstructor_ReturnsInputtedOrder_List<Order>(string name,string description,string order1,string order2)
+    {
+      //Act
+      Vendor testVendor1 = new Vendor(name, description);
+      Order testOrder1 = new Order(order1);
+      Order testOrder2 = new Order(order2);
+      int count = 2;
+
+      //Assert
+      Assert.AreEqual(count, testVendor1.Orders.Count);
+    }
   }
 }

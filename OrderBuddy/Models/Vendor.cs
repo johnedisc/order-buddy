@@ -7,6 +7,7 @@ namespace OrderBuddy.Models
     public string Description { get; set; }
     public string Name { get; set; }
     public int Id { get; }
+    public List<Order> Orders { get; set; }
     private static List<Vendor> _instances = new List<Vendor> {};
     private static int _totalCount = 0;
 
@@ -16,6 +17,7 @@ namespace OrderBuddy.Models
       Description = desciptionParameter;
       _instances.Add(this);
       Id = ++_totalCount;
+      Orders = new List<Order>{};
     }
 
     public static List<Vendor> GetInstancesList()
