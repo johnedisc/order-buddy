@@ -1,5 +1,4 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using NUnit.Framework;
 using System.Collections.Generic;
 using OrderBuddy.Models;
 using System;
@@ -7,11 +6,10 @@ using System;
 namespace OrderBuddy.Tests
 {
   [TestClass]
-  public class VendorTests
+  public class VendorTests : IDisposable
   {
 
-    [TearDown]
-    public void BaseTearDown() 
+    public void Dispose() 
     {
       Vendor.EmptyInstancesList();
     }
@@ -61,7 +59,7 @@ namespace OrderBuddy.Tests
       int count = 2;
 
       //Assert
-      Assert.AreEqual(count, testVendor2.Id);
+      Assert.AreEqual(count, GetInstancesList().Count);
     }
 
   }

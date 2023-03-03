@@ -17,14 +17,14 @@ namespace OrderBuddy.Models
       Id = ++_totalCount;
     }
 
-    public List<Vendor> GetInstancesList()
+    public static List<Vendor> GetInstancesList()
     {
       return _instances;
     }
 
-    public void EmptyInstancesList()
+    public static void EmptyInstancesList()
     {
-      _instances = new List<Vendor> {};
+      _instances.Clear();
     }
   }
 }
