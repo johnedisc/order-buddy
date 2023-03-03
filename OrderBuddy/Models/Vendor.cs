@@ -14,6 +14,12 @@ namespace OrderBuddy.Models
     {
       Name = nameParameter;
       Description = desciptionParameter;
+      Id = ++_totalCount;
+    }
+
+    public void GetInstancesList()
+    {
+      return _instances;
     }
 
   }

@@ -10,50 +10,47 @@ namespace OrderBuddy.Tests
   {
 
     [TestMethod]
-    public void VendorConstructor_CreatesInstanceOfVendor_Vendor()
+    //Arrange
+    [DataRow("sysco","very big company that brings our peeled garlic")]
+    public void VendorConstructor_CreatesInstanceOfVendor_Vendor(string name,string description)
     {
-      Vendor testVendor = new Vendor("test","test");
+      Vendor testVendor = new Vendor(name, description);
       Assert.AreEqual(typeof(Vendor), testVendor.GetType());
     }
 
     [TestMethod]
-    public void VendorConstructor_ContainsInputedName_Vendor()
+    //Arrange
+    [DataRow("sysco","very big company that brings our peeled garlic")]
+    public void VendorConstructor_ReturnsInputedName_Vendor(string name,string description)
     {
-      //Arrange
-      string test = "sysco";
-
       //Act
-      Vendor testVendor = new Vendor(test,"more test");
+      Vendor testVendor = new Vendor(name, description);
 
       //Assert
-      Assert.AreEqual(test, testVendor.Name);
+      Assert.AreEqual(name, testVendor.Name);
     }
 
     [TestMethod]
-    public void VendorConstructor_ReturnsDescriptionProperty_Vendor()
+    //Arrange
+    [DataRow("sysco","very big company that brings our peeled garlic")]
+    public void VendorConstructor_ReturnsInputtedDescription_Vendor(string name,string description)
     {
-      //Arrange
-      string test = "sysco";
-      string sampleDescription = "very big company that brings our peeled garlic";
-
       //Act
-      Vendor testVendor = new Vendor(test, sampleDescription);
+      Vendor testVendor = new Vendor(name, description);
 
       //Assert
-      Assert.AreEqual(sampleDescription, testVendor.Description);
+      Assert.AreEqual(description, testVendor.Description);
     }
 
 
     [TestMethod]
-    public void VendorConstructor_InstanceIdCorrespondsWithTotalNumberOfInstancesCreated_Vendor()
+    //Arrange
+    [DataRow("sysco","very big company that brings our peeled garlic")]
+    public void VendorConstructor_InstanceIdCorrespondsWithTotalNumberOfInstancesCreated_Vendor(string name,string description)
     {
-      //Arrange
-      string test = "sysco";
-      string sampleDescription = "very big company that brings our peeled garlic";
-
       //Act
-      Vendor testVendor = new Vendor(test, sampleDescription);
-      Vendor testVendor2 = new Vendor(test, sampleDescription);
+      Vendor testVendor1 = new Vendor(name, description);
+      Vendor testVendor2 = new Vendor(name, description);
       int count = 2;
 
       //Assert
