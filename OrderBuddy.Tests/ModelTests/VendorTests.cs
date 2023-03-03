@@ -1,4 +1,5 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NUnit.Framework;
 using System.Collections.Generic;
 using OrderBuddy.Models;
 using System;
@@ -8,6 +9,12 @@ namespace OrderBuddy.Tests
   [TestClass]
   public class VendorTests
   {
+
+    [TearDown]
+    public void BaseTearDown() 
+    {
+      Vendor.EmptyInstancesList();
+    }
 
     [TestMethod]
     //Arrange
