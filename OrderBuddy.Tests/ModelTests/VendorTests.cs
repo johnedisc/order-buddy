@@ -44,6 +44,21 @@ namespace OrderBuddy.Tests
     }
 
 
+    [TestMethod]
+    public void VendorConstructor_InstanceIdCorrespondsWithTotalNumberOfInstancesCreated_Vendor()
+    {
+      //Arrange
+      string test = "sysco";
+      string sampleDescription = "very big company that brings our peeled garlic";
+
+      //Act
+      Vendor testVendor = new Vendor(test, sampleDescription);
+      Vendor testVendor2 = new Vendor(test, sampleDescription);
+      int count = 2;
+
+      //Assert
+      Assert.AreEqual(count, testVendor2.Id);
+    }
 
   }
 }
