@@ -4,6 +4,9 @@ namespace OrderBuddy.Models
 {
   public class Vendor
   {
+    public Vendor()
+    {
+    }
 
   }
 }
