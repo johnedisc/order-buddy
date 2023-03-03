@@ -64,13 +64,15 @@ namespace OrderBuddy.Tests
 
     [TestMethod]
     //Arrange
-    [DataRow("sysco","very big company that brings our peeled garlic","70 lbs garlic","140 lbs butter")]
-    public void VendorConstructor_ReturnsInputtedOrder_List<Order>(string name,string description,string order1,string order2)
+    [DataRow("sysco","very big company that brings our peeled garlic")]
+    public void VendorConstructor_ReturnsInputtedOrder_List<Order>(string name,string description)
     {
       //Act
       Vendor testVendor1 = new Vendor(name, description);
       Order testOrder1 = new Order();
       Order testOrder2 = new Order();
+      testVendor1.Orders.Add(testOrder1);
+      testVendor2.Orders.Add(testOrder2);
       int count = 2;
 
       //Assert
