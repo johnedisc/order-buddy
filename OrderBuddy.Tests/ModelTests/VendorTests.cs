@@ -69,8 +69,8 @@ namespace OrderBuddy.Tests
     {
       //Act
       Vendor testVendor1 = new Vendor(name, description);
-      Order testOrder1 = new Order(order1);
-      Order testOrder2 = new Order(order2);
+      Order testOrder1 = new Order();
+      Order testOrder2 = new Order();
       int count = 2;
 
       //Assert
