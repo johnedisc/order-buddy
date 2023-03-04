@@ -35,5 +35,14 @@ namespace OrderBuddy.Tests
       Assert.AreEqual(sampleParameters[0], testOrder.Title);
     }
 
+    [TestMethod]
+    public void OrderConstruct_ReturnsInputDescription_Order()
+    {
+      //Act
+      Order testOrder = new Order(sampleParameters[0],sampleParameters[1]);
+
+      //Assert
+      Assert.AreEqual(sampleParameters[1], testOrder.Description);
+    }
   }
 }
