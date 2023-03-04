@@ -21,7 +21,7 @@ namespace OrderBuddy.Tests
     [TestMethod]
     public void OrderConstruct_MakesInstanceOfOrder_Order()
     {
-      Order testOrder = new Order(sampleParameters[0],sampleParameters[1],sampleParameters[2]);
+      Order testOrder = new Order(sampleParameters[0],sampleParameters[1],sampleParameters[2],sampleParameters[3]);
       Assert.AreEqual(typeof(Order), testOrder.GetType());
     }
 
@@ -29,7 +29,7 @@ namespace OrderBuddy.Tests
     public void OrderConstruct_ReturnsInputTitle_Order()
     {
       //Act
-      Order testOrder = new Order(sampleParameters[0],sampleParameters[1],sampleParameters[2]);
+      Order testOrder = new Order(sampleParameters[0],sampleParameters[1],sampleParameters[2],sampleParameters[3]);
 
       //Assert
       Assert.AreEqual(sampleParameters[0], testOrder.Title);
@@ -39,7 +39,7 @@ namespace OrderBuddy.Tests
     public void OrderConstruct_ReturnsInputDescription_Order()
     {
       //Act
-      Order testOrder = new Order(sampleParameters[0],sampleParameters[1],sampleParameters[2]);
+      Order testOrder = new Order(sampleParameters[0],sampleParameters[1],sampleParameters[2],sampleParameters[3]);
 
       //Assert
       Assert.AreEqual(sampleParameters[1], testOrder.Description);
@@ -49,10 +49,20 @@ namespace OrderBuddy.Tests
     public void OrderConstruct_ReturnsInputPrice_Order()
     {
       //Act
-      Order testOrder = new Order(sampleParameters[0],sampleParameters[1],sampleParameters[2]);
+      Order testOrder = new Order(sampleParameters[0],sampleParameters[1],sampleParameters[2],sampleParameters[3]);
 
       //Assert
       Assert.AreEqual(sampleParameters[2], testOrder.Price);
+    }
+
+    [TestMethod]
+    public void OrderConstruct_ReturnsInputDate_Order()
+    {
+      //Act
+      Order testOrder = new Order(sampleParameters[0],sampleParameters[1],sampleParameters[2],sampleParameters[3]);
+
+      //Assert
+      Assert.AreEqual(sampleParameters[3], testOrder.Date);
     }
   }
 }
