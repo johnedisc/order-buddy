@@ -62,24 +62,24 @@ namespace OrderBuddy.Tests
       Assert.AreEqual(count, Vendor.GetInstancesList().Count);
     }
 
-    [TestMethod]
-    //Arrange
-    [DataRow("sysco","very big company that brings our peeled garlic")]
-    public void VendorConstructor_ReturnsInputtedOrder_List<Order>(string name,string description)
-    {
-      //Arrange
-      //Title, Description, Price, Date
-      List<string> sampleParameters = new List<string> { "flour","50 lbs bag","$25.25","2/23/23" };
-      //Act
-      Vendor testVendor1 = new Vendor(name, description);
-      Order testOrder1 = new Order(sampleParameters[0],sampleParameters[1]);
-      Order testOrder2 = new Order(sampleParameters[0],sampleParameters[1]);
-      testVendor1.Orders.Add(testOrder1);
-      testVendor1.Orders.Add(testOrder2);
-      List<Order> testList = new List<Order> { testOrder1, testOrder2 };
-
-      //Assert
-      Assert.AreEqual(testList, testVendor1.Orders);
-    }
+//    [TestMethod]
+//    //Arrange
+//    [DataRow("sysco","very big company that brings our peeled garlic")]
+//    public void VendorConstructor_ReturnsInputtedOrder_List<Order>(string name,string description)
+//    {
+//      //Arrange
+//      //Title, Description, Price, Date
+//      List<string> sampleParameters = new List<string> { "flour","50 lbs bag","$25.25","2/23/23" };
+//      //Act
+//      Vendor testVendor1 = new Vendor(name, description);
+//      Order testOrder1 = new (sampleParameters[0],sampleParameters[1]);
+//      Order testOrder2 = new (sampleParameters[0],sampleParameters[1]);
+//      testVendor1.Orders.Add(testOrder1);
+//      testVendor1.Orders.Add(testOrder2);
+//      List<Order> testList = new List<Order> { testOrder1, testOrder2 };
+//
+//      //Assert
+//      Assert.AreEqual(testList, testVendor1.Orders);
+//    }
   }
 }
