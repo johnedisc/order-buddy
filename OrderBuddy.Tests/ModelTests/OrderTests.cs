@@ -11,7 +11,7 @@ namespace OrderBuddy.Tests
 
     public void Dispose()
     {
-      Order.();
+
     }
 
     [TestMethod]
