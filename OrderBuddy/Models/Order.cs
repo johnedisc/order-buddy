@@ -7,9 +7,10 @@ namespace OrderBuddy.Models
     public string Price { get; }
     public string Date { get; }
 
-    public Order(string titleParameter)
+    public Order(string titleParameter, string descriptionParameter)
     {
       Title = titleParameter;
+      Description = descriptionParameter;
     }
   }
 }
