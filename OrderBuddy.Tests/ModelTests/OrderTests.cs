@@ -21,7 +21,7 @@ namespace OrderBuddy.Tests
     [TestMethod]
     public void OrderConstruct_MakesInstanceOfOrder_Order()
     {
-      Order testOrder = new Order(sampleParameters[0],sampleParameters[1]);
+      Order testOrder = new Order(sampleParameters[0],sampleParameters[1],sampleParameters[2]);
       Assert.AreEqual(typeof(Order), testOrder.GetType());
     }
 
@@ -29,7 +29,7 @@ namespace OrderBuddy.Tests
     public void OrderConstruct_ReturnsInputTitle_Order()
     {
       //Act
-      Order testOrder = new Order(sampleParameters[0],sampleParameters[1]);
+      Order testOrder = new Order(sampleParameters[0],sampleParameters[1],sampleParameters[2]);
 
       //Assert
       Assert.AreEqual(sampleParameters[0], testOrder.Title);
@@ -39,7 +39,7 @@ namespace OrderBuddy.Tests
     public void OrderConstruct_ReturnsInputDescription_Order()
     {
       //Act
-      Order testOrder = new Order(sampleParameters[0],sampleParameters[1]);
+      Order testOrder = new Order(sampleParameters[0],sampleParameters[1],sampleParameters[2]);
 
       //Assert
       Assert.AreEqual(sampleParameters[1], testOrder.Description);
