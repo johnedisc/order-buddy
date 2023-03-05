@@ -72,8 +72,8 @@ namespace OrderBuddy.Tests
 //      List<string> sampleParameters = new List<string> { "flour","50 lbs bag","$25.25","2/23/23" };
 //      //Act
 //      Vendor testVendor1 = new Vendor(name, description);
-//      Order testOrder1 = new (sampleParameters[0],sampleParameters[1]);
-//      Order testOrder2 = new (sampleParameters[0],sampleParameters[1]);
+//      Order testOrder1 = new Order(sampleParameters[0],sampleParameters[1],sampleParameters[2],sampleParameters[3]);
+//      Order testOrder2 = new Order(sampleParameters[0],sampleParameters[1],sampleParameters[2],sampleParameters[3]);
 //      testVendor1.Orders.Add(testOrder1);
 //      testVendor1.Orders.Add(testOrder2);
 //      List<Order> testList = new List<Order> { testOrder1, testOrder2 };
