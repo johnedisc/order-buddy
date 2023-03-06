@@ -27,6 +27,7 @@ namespace OrderBuddy.Models
 
     public static void EmptyInstancesList()
     {
+      _totalCount = 0;
       _instances.Clear();
     }
   }

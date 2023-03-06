@@ -10,6 +10,7 @@ namespace OrderBuddy.Models
     public string Date { get; }
     public int Id { get; }
     private static int _totalCount = 0;
+    private static List<Order> _instances = new List<Order> { };
 
     public Order(string titleParameter, string descriptionParameter, string priceParameter, string dateParameter)
     {
@@ -17,7 +18,20 @@ namespace OrderBuddy.Models
       Description = descriptionParameter;
       Price = priceParameter;
       Date = dateParameter;
+      _instances.Add(this);
       Id = ++_totalCount;
     }
+
+    public static void EmptyInstancesList()
+    {
+      _totalCount = 0;
+      _instances.Clear();
+    }
+
+    public static List<Order> GetInstancesList()
+    {
+      return _instances;
+    }
+
   }
 }

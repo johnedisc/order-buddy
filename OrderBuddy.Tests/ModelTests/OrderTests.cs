@@ -11,7 +11,7 @@ namespace OrderBuddy.Tests
 
     public void Dispose()
     {
-
+      Order.EmptyInstancesList();
     }
 
     //Arrange
@@ -66,7 +66,7 @@ namespace OrderBuddy.Tests
     }
 
     [TestMethod]
-    public void OrderConstruct_CreatesUniqueId_Order()
+    public void OrderConstruct_InstanceIdCorrespondsWithTotalInstancesCreated_Order()
     {
       //Act
       Order testOrder = new Order(sampleParameters[0],sampleParameters[1],sampleParameters[2],sampleParameters[3]);
@@ -74,6 +74,18 @@ namespace OrderBuddy.Tests
 
       //Assert
       Assert.AreEqual(count, testOrder.Id);
+    }
+
+    [TestMethod]
+    public void GetItems_InstanceListReturnsInstances_List()
+    {
+      //Act
+      Order testOrder1 = new Order(sampleParameters[0],sampleParameters[1],sampleParameters[2],sampleParameters[3]);
+      Order testOrder2 = new Order(sampleParameters[0],sampleParameters[1],sampleParameters[2],sampleParameters[3]);
+      List<Order> test = Order.GetInstancesList();
+
+      //Assert
+      Assert.AreEqual(test, Order.GetInstancesList());
     }
   }
 }
