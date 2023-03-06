@@ -62,6 +62,18 @@ namespace OrderBuddy.Tests
       Assert.AreEqual(count, Vendor.GetInstancesList().Count);
     }
 
+    [TestMethod]
+    [DataRow("sysco","very big company that brings our peeled garlic")]
+    public void Find_FindInstanceWithAGivenIdValue_Vendor(string name,string description)
+    {
+      //Act
+      Vendor testVendor1 = new Vendor(name, description);
+      Vendor testVendor2 = new Vendor(name, description);
+
+      //Assert
+      Assert.AreEqual(testVendor2, Vendor.Find(2));
+    }
+
 //    [TestMethod]
 //    //Arrange
 //    [DataRow("sysco","very big company that brings our peeled garlic")]
