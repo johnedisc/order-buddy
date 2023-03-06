@@ -8,6 +8,8 @@ namespace OrderBuddy.Models
     public string Description { get; }
     public string Price { get; }
     public string Date { get; }
+    public int Id { get; }
+    private static int _totalCount = 0;
 
     public Order(string titleParameter, string descriptionParameter, string priceParameter, string dateParameter)
     {
@@ -15,6 +17,7 @@ namespace OrderBuddy.Models
       Description = descriptionParameter;
       Price = priceParameter;
       Date = dateParameter;
+      Id = ++_totalCount;
     }
   }
 }

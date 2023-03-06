@@ -64,5 +64,16 @@ namespace OrderBuddy.Tests
       //Assert
       Assert.AreEqual(sampleParameters[3], testOrder.Date);
     }
+
+    [TestMethod]
+    public void OrderConstruct_CreatesUniqueId_Order()
+    {
+      //Act
+      Order testOrder = new Order(sampleParameters[0],sampleParameters[1],sampleParameters[2],sampleParameters[3]);
+      int count = 1;
+
+      //Assert
+      Assert.AreEqual(count, testOrder.Id);
+    }
   }
 }
