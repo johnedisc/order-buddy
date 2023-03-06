@@ -68,12 +68,13 @@ namespace OrderBuddy.Tests
     {
       //Act
       Vendor testVendor1 = new Vendor(name, description);
-      Vendor testVendor2 = new Vendor(name, description);
+      Vendor testVendor2 = new Vendor("hidden valley", description);
 
       //Assert
-      Assert.AreEqual(testVendor2, Vendor.Find(2));
+      Assert.AreEqual(testVendor2.Name, Vendor.Find(2).Name);
     }
 
+      //Still can't get this test to pass. It wont recognize Order from here.
 //    [TestMethod]
 //    //Arrange
 //    [DataRow("sysco","very big company that brings our peeled garlic")]

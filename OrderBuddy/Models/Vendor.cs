@@ -30,5 +30,17 @@ namespace OrderBuddy.Models
       _totalCount = 0;
       _instances.Clear();
     }
+
+    public static Vendor? Find(int id)
+    {
+      foreach (Vendor obj in _instances)
+      {
+        if (obj.Id == id)
+        {
+          return obj;
+        }
+      }
+      return null;
+    }
   }
 }
