@@ -87,5 +87,16 @@ namespace OrderBuddy.Tests
       //Assert
       Assert.AreEqual(test, Order.GetInstancesList());
     }
+
+    [TestMethod]
+    public void Find_FindInstanceWithAGivenIdValue_Object()
+    {
+      //Act
+      Order testOrder1 = new Order(sampleParameters[0],sampleParameters[1],sampleParameters[2],sampleParameters[3]);
+      Order testOrder2 = new Order(sampleParameters[0],sampleParameters[1],sampleParameters[2],sampleParameters[3]);
+
+      //Assert
+      Assert.AreEqual(testOrder2.Price, Order.Find(2).Price);
+    }
   }
 }

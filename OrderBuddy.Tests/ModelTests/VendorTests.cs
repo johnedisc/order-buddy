@@ -79,7 +79,7 @@ namespace OrderBuddy.Tests
 //      List<Order> testList = new List<Order> { testOrder1, testOrder2 };
 //
 //      //Assert
-//      Assert.AreEqual(testList, testVendor1.Orders);
+//      CollectionAssert.AreEqual(testList, testVendor1.Orders);
 //    }
   }
 }

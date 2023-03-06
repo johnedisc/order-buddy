@@ -33,5 +33,17 @@ namespace OrderBuddy.Models
       return _instances;
     }
 
+    public static Order? Find(int id)
+    {
+      foreach (Order obj in _instances)
+      {
+        if (obj.Id == id)
+        {
+          return obj;
+        }
+      }
+      return null;
+    }
+
   }
 }
