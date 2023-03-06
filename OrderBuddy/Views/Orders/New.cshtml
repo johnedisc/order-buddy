@@ -1,0 +1,16 @@
+@{
+  Layout = "_Layout";
+}
+
+<div>
+  <h2>add new order below</h2>
+  <form action="/vendors/@Model.Id/orders/create" method="post">
+    <input id="orderTitle" name="orderTitle" type="text" placeholder="enter an order title">
+    <input id="orderDescription" name="orderDescription" type="text" placeholder="enter a description">
+    <input id="orderPrice" name="orderPrice" type="text" placeholder="enter an order price">
+    <input id="orderDate" name="orderDate" type="text" placeholder="enter a date">
+    <button type="submit">submit entry</button>
+  </form>
+
+  <a href="/"><p>back home</p></a>
+</div>

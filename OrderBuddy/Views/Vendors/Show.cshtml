@@ -1,0 +1,27 @@
+@{
+  Layout = "_Layout";
+}
+
+<div>
+  @using OrderBuddy.Models
+
+  <h2>@Model.Name</h2>
+
+  @if (Model.Orders.Count == 0)
+  {
+    <p>no current orders</p>
+  }
+
+  @foreach (Order obj in Model.Orders)
+  {
+    <a href=""><h2>@obj.Title</h2></a>
+    <a href=""><h4>@obj.Description</h4></a>
+    <a href=""><h4>@obj.Price</h4></a>
+    <a href=""><h4>@obj.Date</h4></a>
+    <br>
+  }
+
+  <a href="/vendors/@Model.Id/orders/new"><p>add order to @Model.Name</p></a>
+  <a href="/"><p>back home</p></a>
+</div>
+
