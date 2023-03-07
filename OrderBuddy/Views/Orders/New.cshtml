@@ -4,8 +4,8 @@
 
 <div>
   <h2>add new order below</h2>
-  <form action="/vendors/@Model.Id/orders/create" method="post">
-    <input name="@Model.Id" type="text" display="none">
+  <form action="/vendors/@Model.Id/orders/" method="post">
+    <input name="vendorId" value="@Model.Id" type="hidden">
     <input id="orderTitle" name="orderTitle" type="text" placeholder="enter an order title">
     <input id="orderDescription" name="orderDescription" type="text" placeholder="enter a description">
     <input id="orderPrice" name="orderPrice" type="text" placeholder="enter an order price">

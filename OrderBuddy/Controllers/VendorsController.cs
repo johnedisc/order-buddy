@@ -36,20 +36,17 @@ namespace OrderBuddy.Controllers
     }
 
 
-//    // This one creates new Items within a given Category, not new Categories:
-//
-//    [HttpPost("/vendors/{vendorId}/items")]
-//    public ActionResult Create(int vendorId, string itemDescription)
-//    {
-//      Dictionary<string, object> model = new Dictionary<string, object>();
-//      Category foundCategory = Category.Find(vendorId);
-//      Item newItem = new Item(itemDescription);
-//      foundCategory.AddItem(newItem);
-//      List<Item> vendorItems = foundCategory.Items;
-//      model.Add("items", vendorItems);
-//      model.Add("vendor", foundCategory);
-//      return View("Show", model);
-//    }
+    // This one creates new Items within a given Category, not new Categories:
+
+    [HttpPost("/vendors/{id}/orders")]
+    public ActionResult Create(string vendorId,string orderTitle,string orderDescription, string orderPrice,string orderDate)
+    {
+      int id = Int32.Parse(vendorId);
+      Order newVendorOrder = new Order(orderTitle, orderDescription, orderPrice, orderDate);
+      Vendor currentVendor = Vendor.Find(id);
+      currentVendor.Orders.Add(newVendorOrder);
+      return View("Show",currentVendor);
+    }
 
 
   }

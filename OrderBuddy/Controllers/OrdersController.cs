@@ -1,5 +1,6 @@
 using OrderBuddy.Models;
 using Microsoft.AspNetCore.Mvc;
+using System;
 
 namespace OrderBuddy.Controllers
 {
@@ -9,22 +10,9 @@ namespace OrderBuddy.Controllers
       [HttpGet("/vendors/{id}/orders/new")]
       public ActionResult New(int id)
       {
-        Vendor passedVendor = Vendor.Find(id);
-        return View(passedVendor);
+        Vendor currentVendor = Vendor.Find(id);
+        return View(currentVendor);
       }
 
-      [HttpPost("/vendors/{id}/orders/create")]
-      public ActionResult Create(string orderTitle,string orderDescription, string orderPrice,string orderDate)
-      {
-        Order newVendorOrder = new Order(string orderTitle,string orderDescription, string orderPrice,string orderDate);
-        Vendor passedVendor = Vendor.Find(id);
-        return ResultToAction(passedVendor);
-      }
-      [HttpPost("/vendors")]
-      public ActionResult Create(string vendorName, string vendorDescription)
-      {
-        Vendor newVendor = new Vendor(vendorName, vendorDescription);
-        return RedirectToAction("Index");
-      }
     }
 }
