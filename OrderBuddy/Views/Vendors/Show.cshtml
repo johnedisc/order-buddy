@@ -14,7 +14,7 @@
 
   @foreach (Order obj in Model.Orders)
   {
-    <div class="items">
+    <a href="/vendors/@Model.Id/orders/@obj.Id"<div class="items">
       <h2>@obj.Title</h2>
       <h4>@obj.Description</h4>
       <h4>@obj.Price</h4>
@@ -23,6 +23,7 @@
   }
 
   <a href="/vendors/@Model.Id/orders/new"><p>add order to @Model.Name</p></a>
+  <a href="/vendors"><p>return to vendor list</p></a>
   <a href="/"><p>back home</p></a>
 </div>
 

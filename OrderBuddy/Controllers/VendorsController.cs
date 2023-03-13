@@ -35,9 +35,6 @@ namespace OrderBuddy.Controllers
       return View(selectedVendor);
     }
 
-
-    // This one creates new Items within a given Category, not new Categories:
-
     [HttpPost("/vendors/{id}/orders")]
     public ActionResult Create(string vendorId,string orderTitle,string orderDescription, string orderPrice,string orderDate)
     {
