@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 
 namespace OrderBuddy.Models
 {
@@ -42,5 +43,18 @@ namespace OrderBuddy.Models
       }
       return null;
     }
+
+    public void DeleteOrder(int OrderId)
+    {
+      foreach (Order element in Orders.ToList())
+      {
+        if (element.Id == OrderId)
+        {
+          Orders.Remove(element);
+        }
+      }
+    }
+
+
   }
 }

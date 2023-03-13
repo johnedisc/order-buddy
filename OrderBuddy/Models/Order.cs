@@ -9,6 +9,7 @@ namespace OrderBuddy.Models
     public string Price { get; }
     public string Date { get; }
     public int Id { get; }
+    public int VendorId { get; set; }
     private static int _totalCount = 0;
     private static List<Order> _instances = new List<Order> { };
 
