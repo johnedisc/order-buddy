@@ -26,7 +26,7 @@ namespace OrderBuddy.Controllers
       {
         Vendor currentVendor = Vendor.Find(VendorId);
         currentVendor.DeleteOrder(Id);
-        return RedirectToAction("Show","Vendors");
+        return View("Views/Vendors/Show.cshtml",currentVendor);
       }
 
     }
